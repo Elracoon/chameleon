@@ -1,14 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjj764wgb070q"]
+[gd_scene load_steps=7 format=3 uid="uid://cjj764wgb070q"]
 
 [ext_resource type="Script" path="res://code/player.gd" id="1_7d68g"]
 [ext_resource type="Texture2D" uid="uid://bt3f773i6cbkr" path="res://img/PERSO1.png" id="2_hlxtx"]
 [ext_resource type="Texture2D" uid="uid://cgwocfh8njp3s" path="res://img/OIP (3).png" id="3_bh0np"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vkttq"]
-size = Vector2(85, 106)
+size = Vector2(106, 133)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uns3a"]
-size = Vector2(1920, 68)
+size = Vector2(771, 373)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnbef"]
+size = Vector2(369, 67)
 
 [node name="Node2D" type="Node2D"]
 
@@ -18,22 +21,48 @@ script = ExtResource("1_7d68g")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_hlxtx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-visible = false
-position = Vector2(0.5, 0)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_vkttq")
 
-[node name="platform" type="StaticBody2D" parent="."]
+[node name="platforme début" type="StaticBody2D" parent="."]
 position = Vector2(32, 1046)
+metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="platform"]
-position = Vector2(927.875, 0)
-scale = Vector2(8.9314, 0.3)
+[node name="Sprite2D" type="Sprite2D" parent="platforme début"]
+position = Vector2(353.875, -154.125)
+scale = Vector2(3.59186, 1.67)
 texture = ExtResource("3_bh0np")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
-position = Vector2(928, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforme début"]
+position = Vector2(353.5, -152.5)
 shape = SubResource("RectangleShape2D_uns3a")
+
+[node name="platform2" type="StaticBody2D" parent="."]
+position = Vector2(1446, 371)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="platform2"]
+position = Vector2(152.875, 0)
+scale = Vector2(1.72209, 0.3)
+texture = ExtResource("3_bh0np")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform2"]
+position = Vector2(153, 0.5)
+shape = SubResource("RectangleShape2D_cnbef")
+
+[node name="platform3" type="StaticBody2D" parent="."]
+position = Vector2(912, 519)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="platform3"]
+position = Vector2(152.875, 0)
+scale = Vector2(1.72209, 0.3)
+texture = ExtResource("3_bh0np")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform3"]
+position = Vector2(152.5, 0.5)
+shape = SubResource("RectangleShape2D_cnbef")
