@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjj764wgb070q"]
+
+[ext_resource type="Script" path="res://code/player.gd" id="1_7d68g"]
+[ext_resource type="Texture2D" uid="uid://bt3f773i6cbkr" path="res://img/PERSO1.png" id="2_hlxtx"]
+[ext_resource type="Texture2D" uid="uid://cgwocfh8njp3s" path="res://img/OIP (3).png" id="3_bh0np"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vkttq"]
+size = Vector2(85, 106)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uns3a"]
+size = Vector2(1920, 68)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="player" type="CharacterBody2D" parent="."]
+position = Vector2(423, 268)
+script = ExtResource("1_7d68g")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="player"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_hlxtx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+visible = false
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_vkttq")
+
+[node name="platform" type="StaticBody2D" parent="."]
+position = Vector2(32, 1046)
+
+[node name="Sprite2D" type="Sprite2D" parent="platform"]
+position = Vector2(927.875, 0)
+scale = Vector2(8.9314, 0.3)
+texture = ExtResource("3_bh0np")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
+position = Vector2(928, 0)
+shape = SubResource("RectangleShape2D_uns3a")
