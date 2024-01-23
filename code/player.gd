@@ -4,6 +4,8 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -700.0
 
+const BULLET = preload("res://scene platform/bullet.tscn")
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -28,9 +30,16 @@ func _physics_process(delta):
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
-		# $Sprite2D.flip_h = true
+		if Input.is_action_pressed("move_right"):
+				$Sprite2D.flip_h = false
+		if Input.is_action_pressed("move_left"):
+				$Sprite2D.flip_h = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
+	if Input.is_action_just_pressed("fire_bullet"):
+		var bullet = BULLET.instantiate()
+		get_parent().add_child(bullet)
+		bullet.position = $Marker2D.global_position
 
 	move_and_slide()

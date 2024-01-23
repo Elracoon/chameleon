@@ -16,17 +16,20 @@ size = Vector2(369, 67)
 [node name="Node2D" type="Node2D"]
 
 [node name="player" type="CharacterBody2D" parent="."]
-position = Vector2(423, 268)
+position = Vector2(417, 270)
 script = ExtResource("1_7d68g")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_hlxtx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(0, 0.5)
+position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_vkttq")
+metadata/_edit_group_ = true
+
+[node name="Marker2D" type="Marker2D" parent="player"]
+position = Vector2(54, 11)
 
 [node name="platforme début" type="StaticBody2D" parent="."]
 position = Vector2(32, 1046)
