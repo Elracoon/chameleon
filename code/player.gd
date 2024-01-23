@@ -32,13 +32,21 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 		if Input.is_action_pressed("move_right"):
 				$Sprite2D.flip_h = false
+				if sign($Marker2D.position.x) == -1:
+					$Marker2D.position.x *= -1
 		if Input.is_action_pressed("move_left"):
 				$Sprite2D.flip_h = true
+				if sign($Marker2D.position.x) == 1:
+					$Marker2D.position.x *= -1
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	if Input.is_action_just_pressed("fire_bullet"):
 		var bullet = BULLET.instantiate()
+		if sign($Marker2D.position.x) == 1:
+			bullet.set_bullet_direction(1)
+		else:
+			bullet.set_bullet_direction(-1)
 		get_parent().add_child(bullet)
 		bullet.position = $Marker2D.global_position
 
