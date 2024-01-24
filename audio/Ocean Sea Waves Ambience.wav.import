@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dw0fx7i8hmq1s"
+path="res://.godot/imported/Ocean Sea Waves Ambience.wav-6247c968bf0f856a3e456f34af11a8a6.sample"
+
+[deps]
+
+source_file="res://audio/Ocean Sea Waves Ambience.wav"
+dest_files=["res://.godot/imported/Ocean Sea Waves Ambience.wav-6247c968bf0f856a3e456f34af11a8a6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
