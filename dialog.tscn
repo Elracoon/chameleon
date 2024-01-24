@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6col6hcrhed"]
+
+[ext_resource type="Script" path="res://dialog.gd" id="1_xm5ft"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 283.0
+offset_bottom = 199.0
+script = ExtResource("1_xm5ft")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
