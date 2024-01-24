@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgwocfh8njp3s"
-path="res://.godot/imported/OIP (3).png-619224e4d4679d5acf5a522bc682633f.ctex"
+uid="uid://18uhvcj12pi"
+path="res://.godot/imported/Vague_clair_2.png-a2ca4155b5ba145c14fe8ac3447bbaab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/OIP (3).png"
-dest_files=["res://.godot/imported/OIP (3).png-619224e4d4679d5acf5a522bc682633f.ctex"]
+source_file="res://img/image_level_decor/Vague_clair_2.png"
+dest_files=["res://.godot/imported/Vague_clair_2.png-a2ca4155b5ba145c14fe8ac3447bbaab.ctex"]
 
 [params]
 
