@@ -1,0 +1,124 @@
+[gd_scene load_steps=11 format=3 uid="uid://bcakhf7qerhen"]
+
+[ext_resource type="Script" path="res://code/player.gd" id="1_6gu0m"]
+[ext_resource type="Texture2D" uid="uid://bt3f773i6cbkr" path="res://img/PERSO1.png" id="2_1cmjm"]
+[ext_resource type="AudioStream" uid="uid://b2l8c04rm8fkc" path="res://audio/Jumping Jump 3.wav" id="3_yaeha"]
+[ext_resource type="Script" path="res://code/vague.gd" id="4_y80f4"]
+[ext_resource type="Texture2D" uid="uid://fq034ddk2ft1" path="res://img/image_fond_chateau/fond chateau-04 3.png" id="5_vh1xw"]
+[ext_resource type="Texture2D" uid="uid://csjw3ygv00rxp" path="res://img/image_fond_chateau/fond chateau_Plan de travail 1 copie 3 1.png" id="6_r6wo7"]
+[ext_resource type="Texture2D" uid="uid://dfhu5kkcd3di1" path="res://img/image_fond_chateau/fond chateau_Plan de travail 1 copie 4.png" id="7_p8o5k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j72ki"]
+size = Vector2(63, 134.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36tff"]
+size = Vector2(5793, 106)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64sfl"]
+size = Vector2(208, 122)
+
+[node name="scene_chateau" type="Node2D"]
+
+[node name="player" type="CharacterBody2D" parent="."]
+z_index = 1
+position = Vector2(327, 599)
+script = ExtResource("1_6gu0m")
+
+[node name="Sprite2D" type="Sprite2D" parent="player"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_1cmjm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(3.5, -0.25)
+shape = SubResource("RectangleShape2D_j72ki")
+metadata/_edit_group_ = true
+
+[node name="Marker2D" type="Marker2D" parent="player"]
+position = Vector2(54, 11)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="player"]
+stream = ExtResource("3_yaeha")
+script = ExtResource("4_y80f4")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="player"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(327, 599)
+offset = Vector2(650, -50)
+process_callback = 0
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+z_index = -3
+position = Vector2(-1.0842e-19, -0.00012207)
+scale = Vector2(1.01401, 1.01401)
+texture = ExtResource("5_vh1xw")
+centered = false
+
+[node name="Le sol" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Le sol"]
+position = Vector2(2897, 1053)
+shape = SubResource("RectangleShape2D_36tff")
+
+[node name="tableau_level1" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tableau_level1"]
+
+[node name="Sprite2D" type="Sprite2D" parent="tableau_level1"]
+position = Vector2(4252, 665)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_r6wo7")
+
+[node name="tableau_level2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tableau_level2"]
+
+[node name="Sprite2D" type="Sprite2D" parent="tableau_level2"]
+position = Vector2(4896, 665)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_p8o5k")
+
+[node name="tableau_level3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tableau_level3"]
+
+[node name="Sprite2D" type="Sprite2D" parent="tableau_level3"]
+position = Vector2(5532, 665)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_p8o5k")
+
+[node name="zoneDetclevel1" type="Area2D" parent="."]
+position = Vector2(4257, 936)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zoneDetclevel1"]
+shape = SubResource("RectangleShape2D_64sfl")
+
+[node name="zoneDetclevel2" type="Area2D" parent="."]
+position = Vector2(4903, 936)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zoneDetclevel2"]
+shape = SubResource("RectangleShape2D_64sfl")
+
+[node name="zoneDetclevel3" type="Area2D" parent="."]
+position = Vector2(5536, 936)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zoneDetclevel3"]
+shape = SubResource("RectangleShape2D_64sfl")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 199.0
+offset_top = -74.0
+offset_right = 307.0
+offset_bottom = -48.0
+text = "Appuyer sur E"
