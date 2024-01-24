@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://8mb56bln5e0w"]
 
-[ext_resource type="Script" path="res://scene platform/bullet.gd" id="1_54tgc"]
 [ext_resource type="Texture2D" uid="uid://bdqc0gegc3a46" path="res://img/laserRed01.png" id="1_fojp7"]
+[ext_resource type="Script" path="res://code/bullet.gd" id="1_g7lfx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_67pyh"]
 animations = [{
@@ -21,7 +21,7 @@ animations = [{
 size = Vector2(55, 10)
 
 [node name="Bullet" type="Area2D"]
-script = ExtResource("1_54tgc")
+script = ExtResource("1_g7lfx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_67pyh")
