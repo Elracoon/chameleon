@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://drg3cm41kdqwm"]
+
+[ext_resource type="Texture2D" uid="uid://b3ramwnkcycrb" path="res://img/image_fond_chateau/fond chateau_Plan de travail 1 copie 2 3.png" id="1_1x377"]
+[ext_resource type="Texture2D" uid="uid://bf25emmarhhgh" path="res://img/image_fond_chateau/Capture d’écran 2024-01-24 à 21.42.41.png" id="2_43pha"]
+
+[sub_resource type="Theme" id="Theme_njrhs"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1x377")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(426, 81)
+texture = ExtResource("2_43pha")
+centered = false
+
+[node name="startButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 815.0
+offset_top = 644.0
+offset_right = 1129.0
+offset_bottom = 762.0
+theme = SubResource("Theme_njrhs")
+theme_override_font_sizes/font_size = 40
+text = "Start"
