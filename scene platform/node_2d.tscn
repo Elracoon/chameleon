@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://btkihbqb3axmv"]
+[gd_scene load_steps=23 format=3 uid="uid://btkihbqb3axmv"]
 
 [ext_resource type="Script" path="res://code/player.gd" id="1_7d68g"]
 [ext_resource type="Texture2D" uid="uid://bt3f773i6cbkr" path="res://img/PERSO1.png" id="2_hlxtx"]
@@ -69,6 +69,21 @@ sources/0 = SubResource("TileSetAtlasSource_mb6cm")
 sources/1 = SubResource("TileSetAtlasSource_trkhl")
 sources/2 = SubResource("TileSetAtlasSource_76i1k")
 
+[sub_resource type="GDScript" id="GDScript_tsh5i"]
+script/source = "extends Camera2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	position.x = get_parent().get_node('player').position.x
+	
+"
+
 [node name="Node2D" type="Node2D"]
 
 [node name="player" type="CharacterBody2D" parent="."]
@@ -87,8 +102,6 @@ metadata/_edit_group_ = true
 
 [node name="Marker2D" type="Marker2D" parent="player"]
 position = Vector2(54, 11)
-
-[node name="Camera2D" type="Camera2D" parent="player"]
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="player"]
 stream = ExtResource("3_gji83")
@@ -118,57 +131,29 @@ script = ExtResource("8_0npxu")
 position = Vector2(960, 535)
 texture = ExtResource("6_xxr2a")
 
-[node name="vague fond" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.5, 0.2)
+[node name="vague" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(4100, 0)
 
-[node name="vague2Sprite2D7" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -2
-position = Vector2(-1969, 806)
-texture = ExtResource("10_i5bvg")
-centered = false
-
-[node name="vague2Sprite2D8" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = 2
-position = Vector2(-1956, 983)
-texture = ExtResource("8_kmmhg")
-centered = false
-
-[node name="vague2Sprite2D9" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -1
-position = Vector2(-1659, 923)
-scale = Vector2(1, 1.1809)
-texture = ExtResource("12_omkjk")
-centered = false
-
-[node name="vague1Sprite2D" type="Sprite2D" parent="ParallaxBackground/vague fond"]
+[node name="vague1Sprite2D" type="Sprite2D" parent="ParallaxBackground/vague"]
 z_index = -2
 position = Vector2(0, 806)
 texture = ExtResource("7_seib3")
 centered = false
 
-[node name="vague1Sprite2D2" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = 2
-position = Vector2(0, 983)
-texture = ExtResource("8_4odl3")
+[node name="vague2Sprite2D4" type="Sprite2D" parent="ParallaxBackground/vague"]
+z_index = -2
+position = Vector2(2068, 806)
+texture = ExtResource("10_i5bvg")
 centered = false
+
+[node name="vague fond" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(3250, 0)
 
 [node name="vague1Sprite2D3" type="Sprite2D" parent="ParallaxBackground/vague fond"]
 z_index = -1
 position = Vector2(0, 923)
 scale = Vector2(1, 1.1809)
 texture = ExtResource("9_hyluv")
-centered = false
-
-[node name="vague2Sprite2D4" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -2
-position = Vector2(2023, 806)
-texture = ExtResource("10_i5bvg")
-centered = false
-
-[node name="vague2Sprite2D5" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = 2
-position = Vector2(1883, 983)
-texture = ExtResource("8_kmmhg")
 centered = false
 
 [node name="vague2Sprite2D6" type="Sprite2D" parent="ParallaxBackground/vague fond"]
@@ -178,194 +163,22 @@ scale = Vector2(1, 1.1809)
 texture = ExtResource("12_omkjk")
 centered = false
 
-[node name="vague1Sprite2D6" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -1
-position = Vector2(19710, 951)
-texture = ExtResource("9_hyluv")
-centered = false
+[node name="vague fonce" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(3800, 0)
 
-[node name="vague1Sprite2D19" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -2
-position = Vector2(20171, 806)
-texture = ExtResource("7_seib3")
-centered = false
-
-[node name="vague1Sprite2D20" type="Sprite2D" parent="ParallaxBackground/vague fond"]
+[node name="vague1Sprite2D2" type="Sprite2D" parent="ParallaxBackground/vague fonce"]
 z_index = 2
-position = Vector2(19050, 983)
+position = Vector2(0, 983)
 texture = ExtResource("8_4odl3")
 centered = false
 
-[node name="vague1Sprite2D21" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -1
-position = Vector2(16410, 951)
-texture = ExtResource("9_hyluv")
-centered = false
-
-[node name="vague1Sprite2D16" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -2
-position = Vector2(16167, 806)
-texture = ExtResource("7_seib3")
-centered = false
-
-[node name="vague1Sprite2D17" type="Sprite2D" parent="ParallaxBackground/vague fond"]
+[node name="vague2Sprite2D5" type="Sprite2D" parent="ParallaxBackground/vague fonce"]
 z_index = 2
-position = Vector2(15290, 983)
-texture = ExtResource("8_4odl3")
-centered = false
-
-[node name="vague1Sprite2D18" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -1
-position = Vector2(13062, 951)
-texture = ExtResource("9_hyluv")
-centered = false
-
-[node name="vague1Sprite2D13" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -2
-position = Vector2(12170, 806)
-texture = ExtResource("7_seib3")
-centered = false
-
-[node name="vague1Sprite2D14" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = 2
-position = Vector2(11451, 983)
-texture = ExtResource("8_4odl3")
-centered = false
-
-[node name="vague1Sprite2D15" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -1
-position = Vector2(9818, 929)
-texture = ExtResource("9_hyluv")
-centered = false
-
-[node name="vague1Sprite2D7" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -2
-position = Vector2(4139, 806)
-texture = ExtResource("7_seib3")
-centered = false
-
-[node name="vague1Sprite2D8" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = 2
-position = Vector2(3833, 983)
-texture = ExtResource("8_4odl3")
-centered = false
-
-[node name="vague1Sprite2D9" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -1
-position = Vector2(3246, 929)
-texture = ExtResource("9_hyluv")
-centered = false
-
-[node name="vague2Sprite2D12" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -1
-position = Vector2(21324, 951)
-texture = ExtResource("12_omkjk")
-centered = false
-
-[node name="vague2Sprite2D25" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -2
-position = Vector2(22198, 806)
-texture = ExtResource("10_i5bvg")
-centered = false
-
-[node name="vague2Sprite2D26" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = 2
-position = Vector2(20890, 983)
+position = Vector2(1883, 983)
 texture = ExtResource("8_kmmhg")
 centered = false
 
-[node name="vague2Sprite2D27" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -1
-position = Vector2(18078, 951)
-texture = ExtResource("12_omkjk")
-centered = false
-
-[node name="vague2Sprite2D22" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -2
-position = Vector2(18182, 806)
-texture = ExtResource("10_i5bvg")
-centered = false
-
-[node name="vague2Sprite2D23" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = 2
-position = Vector2(17161, 983)
-texture = ExtResource("8_kmmhg")
-centered = false
-
-[node name="vague2Sprite2D24" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -1
-position = Vector2(14681, 951)
-texture = ExtResource("12_omkjk")
-centered = false
-
-[node name="vague2Sprite2D19" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -2
-position = Vector2(14187, 806)
-texture = ExtResource("10_i5bvg")
-centered = false
-
-[node name="vague2Sprite2D20" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = 2
-position = Vector2(13338, 983)
-texture = ExtResource("8_kmmhg")
-centered = false
-
-[node name="vague2Sprite2D21" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -1
-position = Vector2(11424, 951)
-texture = ExtResource("12_omkjk")
-centered = false
-
-[node name="vague2Sprite2D16" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -2
-position = Vector2(10177, 806)
-texture = ExtResource("10_i5bvg")
-centered = false
-
-[node name="vague2Sprite2D17" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = 2
-position = Vector2(9516, 983)
-texture = ExtResource("8_kmmhg")
-centered = false
-
-[node name="vague2Sprite2D18" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -1
-position = Vector2(8173, 929)
-texture = ExtResource("12_omkjk")
-centered = false
-
-[node name="vague1Sprite2D10" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -2
-position = Vector2(8153, 806)
-texture = ExtResource("7_seib3")
-centered = false
-
-[node name="vague1Sprite2D11" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = 2
-position = Vector2(7654, 983)
-texture = ExtResource("8_4odl3")
-centered = false
-
-[node name="vague1Sprite2D12" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -1
-position = Vector2(6542, 929)
-texture = ExtResource("9_hyluv")
-centered = false
-
-[node name="vague2Sprite2D13" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -2
-position = Vector2(6175, 806)
-texture = ExtResource("10_i5bvg")
-centered = false
-
-[node name="vague2Sprite2D14" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = 2
-position = Vector2(5699, 983)
-texture = ExtResource("8_kmmhg")
-centered = false
-
-[node name="vague2Sprite2D15" type="Sprite2D" parent="ParallaxBackground/vague fond"]
-z_index = -1
-position = Vector2(4902, 929)
-texture = ExtResource("12_omkjk")
-centered = false
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(963, 539)
+process_callback = 0
+script = SubResource("GDScript_tsh5i")
