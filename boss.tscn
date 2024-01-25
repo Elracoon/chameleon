@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bokpvih1rwvcj"]
+
+[ext_resource type="Texture2D" uid="uid://y1fijd8gt46h" path="res://img/GROSSE PIEUVRE.png" id="1_41usn"]
+[ext_resource type="Script" path="res://boss.gd" id="1_xpqj6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d5bu0"]
+radius = 57.0
+height = 124.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7w3u0"]
+radius = 79.0
+height = 162.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_xpqj6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5.38924, 5.64307)
+scale = Vector2(0.277575, 0.277575)
+texture = ExtResource("1_41usn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_d5bu0")
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CapsuleShape2D_7w3u0")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-81, 0)
+target_position = Vector2(0, 65)

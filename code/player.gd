@@ -52,6 +52,7 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("fire_bullet"):
 		var bullet = BULLET.instantiate()
+		$AnimatedSprite2D.play('tir')
 		if sign($Marker2D.position.x) == 1:
 			bullet.set_bullet_direction(1)
 		else:

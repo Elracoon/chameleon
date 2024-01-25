@@ -1,15 +1,39 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3va2dpi7ixx1"]
+[gd_scene load_steps=15 format=3 uid="uid://d3va2dpi7ixx1"]
 
 [ext_resource type="Script" path="res://code/player.gd" id="1_5sjqu"]
+[ext_resource type="Texture2D" uid="uid://s2qflpeqj46f" path="res://img/1 jaune.png" id="2_8qilt"]
 [ext_resource type="Texture2D" uid="uid://dhbvk6s4impdb" path="res://img/persobleu/1 bleu.png" id="2_27gxq"]
 [ext_resource type="Texture2D" uid="uid://c7ayphjusn12s" path="res://img/persobleu/1 saut.png" id="3_1rm5e"]
+[ext_resource type="Texture2D" uid="uid://dofgeheik135i" path="res://img/2 jaune.png" id="3_2gibn"]
 [ext_resource type="Texture2D" uid="uid://bsvqwxbq8vmt5" path="res://img/persobleu/2 bleu.png" id="4_8uiuo"]
-[ext_resource type="Texture2D" uid="uid://bt3f773i6cbkr" path="res://img/PERSO1.png" id="5_nnnd7"]
+[ext_resource type="Texture2D" uid="uid://k6mg8t5nhc2h" path="res://img/3 jaune.png" id="4_28aa5"]
 [ext_resource type="AudioStream" uid="uid://b2l8c04rm8fkc" path="res://audio/Jumping Jump 3.wav" id="6_qknxk"]
 [ext_resource type="Script" path="res://code/vague.gd" id="7_wpoe3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s2k12"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8qilt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2gibn")
+}],
+"loop": true,
+"name": &"foudre",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8qilt")
+}, {
+"duration": 0.3,
+"texture": ExtResource("4_28aa5")
+}],
+"loop": true,
+"name": &"tir",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_27gxq")
@@ -60,12 +84,13 @@ script = ExtResource("1_5sjqu")
 position = Vector2(2, 0.999939)
 scale = Vector2(0.289965, 0.289965)
 sprite_frames = SubResource("SpriteFrames_s2k12")
-animation = &"walk"
+animation = &"tir"
+frame_progress = 0.566739
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("5_nnnd7")
+texture = ExtResource("2_27gxq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3.5, -0.25)

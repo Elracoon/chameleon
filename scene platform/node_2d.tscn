@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://btkihbqb3axmv"]
+[gd_scene load_steps=28 format=3 uid="uid://btkihbqb3axmv"]
 
 [ext_resource type="PackedScene" uid="uid://d3va2dpi7ixx1" path="res://scene TitleScreen/player.tscn" id="1_0s2s7"]
 [ext_resource type="Script" path="res://scene platform/node.gd" id="1_f07in"]
@@ -16,6 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://cwbtvbsp617r2" path="res://img/image_level_decor/Vague_moyen_2.png" id="12_omkjk"]
 [ext_resource type="Texture2D" uid="uid://cy63m4rokm8o8" path="res://img/image_level_decor/FOND MODIF.png" id="13_p1t7l"]
 [ext_resource type="Script" path="res://scene platform/dead.gd" id="16_q4p5f"]
+[ext_resource type="PackedScene" uid="uid://bokpvih1rwvcj" path="res://boss.tscn" id="18_bfng4"]
+[ext_resource type="Script" path="res://scene platform/pouvoir.gd" id="18_u66rf"]
+[ext_resource type="Texture2D" uid="uid://bnhid74f1p7x" path="res://img/Pouvoir foudre 1.png" id="18_yoks0"]
 [ext_resource type="PackedScene" uid="uid://bs87jrsrmpy1o" path="res://pieuvre.tscn" id="20_b61l3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mb6cm"]
@@ -85,22 +88,26 @@ func _process(delta):
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1743n"]
 size = Vector2(21523.5, 180)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4h5w"]
+size = Vector2(208, 122)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_f07in")
 
 [node name="player" parent="." instance=ExtResource("1_0s2s7")]
-position = Vector2(4921, 481)
+position = Vector2(478, 481)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="player"]
+position = Vector2(-478, -481)
+stream = ExtResource("7_k17bd")
+area_mask = 65535
+script = ExtResource("8_u6mvr")
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(0.5, 0.5)
 tile_set = SubResource("TileSet_tax6f")
 format = 2
-layer_0/tile_data = PackedInt32Array(1179661, 0, 0, 1441821, 2, 0, 1245227, 1, 0, 1245261, 1, 0, 1310861, 1, 0, 1507531, 2, 0, 1769687, 2, 0, 1376551, 1, 0, 1114446, 2, 0, 1179888, 0, 65536, 1310833, 0, 65536, 1048943, 2, 0, 1442190, 0, 0, 1048636, 0, 0, 458849, 0, 0, 852055, 2, 0, 589964, 1, 65536, 1114240, 2, 0, 1179802, 2, 65536, 1310891, 0, 65536, 1507517, 1, 0, 1573088, 2, 0, 1114420, 0, 0, 1507651, 1, 0, 852318, 0, 0, 983297, 1, 0, 393489, 1, 0, 459025, 0, 0, 327953, 2, 0, 917790, 2, 0, 1376529, 0, 0, 1442170, 1, 65536, 1245597, 2, 0, 917925, 2, 0, 655790, 2, 0, 983478, 2, 0, 655806, 2, 0, 393679, 0, 0, 721373, 1, 0, 1049068, 0, 65536, 1442301, 1, 0, 1180170, 1, 65536, 786963, 2, 0, 1180191, 1, 65536, 1573416, 2, 65536, 1114679, 0, 0, 655958, 1, 65536, 787015, 1, 0, 1114726, 0, 0, 1114738, 0, 0, 1114749, 0, 0, 1114760, 0, 0, 1114770, 0, 0, 656006, 2, 0, 852142, 2, 0, 590451, 2, 0)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="TileMap"]
-scale = Vector2(2, 2)
-stream = ExtResource("7_k17bd")
-script = ExtResource("8_u6mvr")
+layer_0/tile_data = PackedInt32Array(1179661, 0, 0, 1441821, 2, 0, 1245227, 1, 0, 1310861, 1, 0, 1507531, 2, 0, 1769687, 2, 0, 1376551, 1, 0, 1114446, 2, 0, 1179888, 0, 65536, 1310833, 0, 65536, 1048943, 2, 0, 1442190, 0, 0, 1048636, 0, 0, 589964, 1, 65536, 1114240, 2, 0, 1179802, 2, 65536, 1310891, 0, 65536, 1507517, 1, 0, 1573088, 2, 0, 1114420, 0, 0, 1507651, 1, 0, 852318, 0, 0, 983297, 1, 0, 917790, 2, 0, 1376529, 0, 0, 1442170, 1, 65536, 1245597, 2, 0, 917925, 2, 0, 655790, 2, 0, 983478, 2, 0, 655806, 2, 0, 393679, 0, 0, 721373, 1, 0, 1049068, 0, 65536, 1442301, 1, 0, 1180170, 1, 65536, 786963, 2, 0, 1180191, 1, 65536, 1573416, 2, 65536, 1114679, 0, 0, 655958, 1, 65536, 787015, 1, 0, 852142, 2, 0, 1310795, 1, 0, 917586, 2, 0, 524383, 2, 0, 589919, 1, 0, 655455, 0, 0, 1114723, 2, 0, 1114754, 2, 0, 1507955, 0, 0)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -111,7 +118,6 @@ motion_mirroring = Vector2(1920, 0)
 script = ExtResource("8_0npxu")
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/décor fond"]
-visible = false
 position = Vector2(961, 540)
 texture = ExtResource("13_p1t7l")
 
@@ -196,3 +202,34 @@ position = Vector2(15953, 434)
 
 [node name="Pieuvre7" parent="." instance=ExtResource("20_b61l3")]
 position = Vector2(18345, 459)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 2947.0
+offset_top = 60.0
+offset_right = 3150.0
+offset_bottom = 105.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Appuyer sur E"
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("18_bfng4")]
+position = Vector2(20209, 616)
+
+[node name="zoneDetclevel1" type="Area2D" parent="."]
+position = Vector2(3047, 241)
+script = ExtResource("18_u66rf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zoneDetclevel1"]
+shape = SubResource("RectangleShape2D_h4h5w")
+
+[node name="PouvoirFoudre1" type="Sprite2D" parent="zoneDetclevel1"]
+position = Vector2(13.0002, -73)
+scale = Vector2(0.209324, 0.209324)
+texture = ExtResource("18_yoks0")
+
+[connection signal="body_entered" from="zoneDetclevel1" to="zoneDetclevel1" method="detecEntrerlabel1"]
+[connection signal="body_exited" from="zoneDetclevel1" to="zoneDetclevel1" method="detectSortiLabel1"]
