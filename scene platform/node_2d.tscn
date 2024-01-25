@@ -89,13 +89,13 @@ size = Vector2(21523.5, 180)
 script = ExtResource("1_f07in")
 
 [node name="player" parent="." instance=ExtResource("1_0s2s7")]
-position = Vector2(4539, 537)
+position = Vector2(4921, 481)
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(0.5, 0.5)
 tile_set = SubResource("TileSet_tax6f")
 format = 2
-layer_0/tile_data = PackedInt32Array(1179661, 0, 0, 983100, 0, 0, 1441821, 2, 0, 1245227, 1, 0, 1245261, 1, 0, 1769559, 2, 0, 1441896, 0, 0, 1310861, 1, 0, 917633, 2, 0, 1769601, 2, 0, 2097288, 2, 0, 589961, 2, 0, 1376425, 0, 0, 1835166, 2, 0, 1769664, 1, 0, 1704128, 2, 0, 1507531, 2, 0, 524561, 0, 0, 459025, 1, 0, 393489, 2, 0, 1310975, 1, 0, 1048878, 0, 0, 1310956, 0, 0, 1376484, 1, 0, 1769687, 2, 0, 1376551, 1, 0, 2031891, 2, 0, 1573185, 1, 0, 655707, 0, 0, 2163035, 0, 0, 1114446, 2, 0, 1966412, 2, 0, 2097504, 0, 0, 524637, 1, 0, 1966432, 1, 0, 2163048, 2, 65536, 721252, 1, 65536, 1507653, 2, 65536, 1114420, 1, 65536, 1179888, 0, 65536, 1245357, 0, 65536, 458893, 1, 65536, 1245330, 2, 65536, 2031757, 1, 0, 2031763, 1, 65536, 1310833, 0, 65536, 1835379, 1, 0, 1835387, 0, 65536, 1048943, 2, 0, 1245560, 1, 65536, 1442190, 0, 0, 1769849, 2, 0, 1311116, 2, 0, 917908, 2, 0, 786841, 1, 65536, 1769890, 0, 0, 1638824, 1, 65536, 1180078, 2, 0, 1507768, 1, 65536, 1376713, 0, 0, 1180110, 0, 0, 983509, 0, 0, 983533, 0, 65536, 1180146, 0, 65536, 1376759, 0, 65536, 1180169, 1, 0, 1638931, 2, 0, 1311259, 2, 65536, 721183, 2, 0, 1179921, 0, 0, 1966341, 1, 0, 1835296, 1, 0, 1180192, 1, 65536, 524820, 2, 0, 655897, 1, 65536, 1638955, 1, 0, 1507888, 2, 65536, 1114681, 1, 0, 1835586, 0, 0, 1704520, 2, 65536, 1311310, 1, 0, 1376851, 1, 65536, 1376878, 0, 0, 918135, 1, 0, 918145, 1, 65536, 787070, 2, 65536, 787066, 2, 0, 1376904, 0, 65536, 1770081, 0, 0, 1770131, 0, 65536)
+layer_0/tile_data = PackedInt32Array(1179661, 0, 0, 1441821, 2, 0, 1245227, 1, 0, 1245261, 1, 0, 1310861, 1, 0, 1507531, 2, 0, 1769687, 2, 0, 1376551, 1, 0, 1114446, 2, 0, 1179888, 0, 65536, 1310833, 0, 65536, 1048943, 2, 0, 1442190, 0, 0, 1048636, 0, 0, 458849, 0, 0, 852055, 2, 0, 589964, 1, 65536, 1114240, 2, 0, 1179802, 2, 65536, 1310891, 0, 65536, 1507517, 1, 0, 1573088, 2, 0, 1114420, 0, 0, 1507651, 1, 0, 852318, 0, 0, 983297, 1, 0, 393489, 1, 0, 459025, 0, 0, 327953, 2, 0, 917790, 2, 0, 1376529, 0, 0, 1442170, 1, 65536, 1245597, 2, 0, 917925, 2, 0, 655790, 2, 0, 983478, 2, 0, 655806, 2, 0, 393679, 0, 0, 721373, 1, 0, 1049068, 0, 65536, 1442301, 1, 0, 1180170, 1, 65536, 786963, 2, 0, 1180191, 1, 65536, 1573416, 2, 65536, 1114679, 0, 0, 655958, 1, 65536, 787015, 1, 0, 1114726, 0, 0, 1114738, 0, 0, 1114749, 0, 0, 1114760, 0, 0, 1114770, 0, 0, 656006, 2, 0, 852142, 2, 0, 590451, 2, 0)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="TileMap"]
 scale = Vector2(2, 2)
@@ -111,6 +111,7 @@ motion_mirroring = Vector2(1920, 0)
 script = ExtResource("8_0npxu")
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/décor fond"]
+visible = false
 position = Vector2(961, 540)
 texture = ExtResource("13_p1t7l")
 
@@ -166,15 +167,6 @@ position = Vector2(961, 537)
 process_callback = 0
 script = SubResource("GDScript_tsh5i")
 
-[node name="Pieuvre" parent="." instance=ExtResource("20_b61l3")]
-position = Vector2(5533, 508)
-
-[node name="Pieuvre2" parent="." instance=ExtResource("20_b61l3")]
-position = Vector2(4669, 898)
-
-[node name="Pieuvre3" parent="." instance=ExtResource("20_b61l3")]
-position = Vector2(3661, 545)
-
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 14
@@ -183,3 +175,24 @@ script = ExtResource("16_q4p5f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(10766.3, 1158)
 shape = SubResource("RectangleShape2D_1743n")
+
+[node name="Pieuvre" parent="." instance=ExtResource("20_b61l3")]
+position = Vector2(3774, 562)
+
+[node name="Pieuvre2" parent="." instance=ExtResource("20_b61l3")]
+position = Vector2(5654, 564)
+
+[node name="Pieuvre3" parent="." instance=ExtResource("20_b61l3")]
+position = Vector2(7858, 496)
+
+[node name="Pieuvre4" parent="." instance=ExtResource("20_b61l3")]
+position = Vector2(10052, 465)
+
+[node name="Pieuvre5" parent="." instance=ExtResource("20_b61l3")]
+position = Vector2(12930, 624)
+
+[node name="Pieuvre6" parent="." instance=ExtResource("20_b61l3")]
+position = Vector2(15953, 434)
+
+[node name="Pieuvre7" parent="." instance=ExtResource("20_b61l3")]
+position = Vector2(18345, 459)

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var SPEED = -60.0
+var SPEED = -200.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -33,3 +33,8 @@ func flip():
 func _on_hit_box_area_entered(area):
 	if area.get_parent().name == "player":
 		area.get_parent().die()
+
+func die():
+	remove_child($Sprite2D)
+	remove_child($HitBox)
+	remove_child($CollisionShape2D)
