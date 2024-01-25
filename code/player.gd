@@ -24,7 +24,6 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		$AnimatedSprite2D.play("jump")
 		$AudioStreamPlayer2D2.play()
 
 	# Get the input direction and handle the movement/deceleration.
@@ -55,3 +54,4 @@ func _physics_process(delta):
 		bullet.position = $Marker2D.global_position
 
 	move_and_slide()
+	
