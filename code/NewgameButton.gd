@@ -1,5 +1,6 @@
 extends Button
 
+var scene_to_load = "res://scene chateau/scene_chateau.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,4 +13,4 @@ func _process(delta):
 
 
 func _on_pressed():
-	get_tree().quit()
+	get_tree().change_scene_to_file(scene_to_load)
