@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cjj764wgb070q"]
+[gd_scene load_steps=27 format=3 uid="uid://btkihbqb3axmv"]
 
 [ext_resource type="PackedScene" uid="uid://d3va2dpi7ixx1" path="res://scene TitleScreen/player.tscn" id="1_0s2s7"]
 [ext_resource type="Texture2D" uid="uid://df2nt2tp4hrhr" path="res://img/image_level_decor/Block_grand.png" id="3_gmihs"]

@@ -60,7 +60,6 @@ func _physics_process(delta):
 		get_parent().add_child(bullet)
 		bullet.position = $Marker2D.global_position
 
-	update_animation()
 	move_and_slide()
 
 
