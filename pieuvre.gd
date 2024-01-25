@@ -31,7 +31,5 @@ func flip():
 		SPEED = abs(SPEED) * -1
 
 func _on_hit_box_area_entered(area):
-	print("zdreee", area.get_parent())
 	if area.get_parent().name == "player":
-		print("ihfosqhf")
 		area.get_parent().die()

@@ -11,7 +11,6 @@ var respawn
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
-	print(position)
 	set_process(true)
 	respawn = position
 
@@ -64,5 +63,3 @@ func _physics_process(delta):
 	
 func die():
 	position = respawn
-
-
