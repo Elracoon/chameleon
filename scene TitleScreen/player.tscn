@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d3va2dpi7ixx1"]
+[gd_scene load_steps=13 format=3 uid="uid://d3va2dpi7ixx1"]
 
 [ext_resource type="Script" path="res://code/player.gd" id="1_5sjqu"]
 [ext_resource type="Texture2D" uid="uid://dhbvk6s4impdb" path="res://img/persobleu/1 bleu.png" id="2_27gxq"]
@@ -46,6 +46,10 @@ _data = {
 "jump": SubResource("Animation_g5bir")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n42s2"]
+radius = 44.0
+height = 150.0
+
 [node name="player" type="CharacterBody2D"]
 z_index = 1
 position = Vector2(417, 270)
@@ -80,3 +84,10 @@ script = ExtResource("7_wpoe3")
 libraries = {
 "": SubResource("AnimationLibrary_ader6")
 }
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_n42s2")

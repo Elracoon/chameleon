@@ -6,12 +6,14 @@ const JUMP_VELOCITY = -700.0
 
 const BULLET = preload("res://scene platform/bullet.tscn")
 
-
+var respawn 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
+	print(position)
 	set_process(true)
+	respawn = position
 
 func _process(delta):
 	if Input.is_action_pressed("echap"):
@@ -59,6 +61,8 @@ func _physics_process(delta):
 		bullet.position = $Marker2D.global_position
 
 	move_and_slide()
-
+	
+func die():
+	position = respawn
 
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://8mb56bln5e0w"]
 
 [ext_resource type="Script" path="res://code/bullet.gd" id="1_g7lfx"]
-[ext_resource type="Texture2D" path="res://img/Fleche_foudre.png" id="2_852lh"]
+[ext_resource type="Texture2D" uid="uid://cer2d24rbn8b0" path="res://img/Fleche_foudre.png" id="2_852lh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_67pyh"]
 animations = [{
