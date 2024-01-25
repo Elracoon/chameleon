@@ -6,6 +6,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var facing_right = false
 
+
 func _ready():
 	$HitBox.connect("body_entered", _on_hit_box_area_entered)
 
@@ -31,6 +32,7 @@ func flip():
 		SPEED = abs(SPEED) * -1
 
 func _on_hit_box_area_entered(area):
+	print(area)
 	if area.get_parent().name == "player":
 		area.get_parent().die()
 

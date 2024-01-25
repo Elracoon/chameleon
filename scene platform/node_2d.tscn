@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://cjj764wgb070q"]
+[gd_scene load_steps=28 format=3 uid="uid://btkihbqb3axmv"]
 
-[ext_resource type="PackedScene" path="res://scene TitleScreen/player.tscn" id="1_0s2s7"]
+[ext_resource type="PackedScene" uid="uid://d3va2dpi7ixx1" path="res://scene TitleScreen/player.tscn" id="1_0s2s7"]
+[ext_resource type="Script" path="res://scene platform/node.gd" id="1_f07in"]
 [ext_resource type="Texture2D" uid="uid://df2nt2tp4hrhr" path="res://img/image_level_decor/Block_grand.png" id="3_gmihs"]
 [ext_resource type="Texture2D" uid="uid://bycc7etaqmjku" path="res://img/image_level_decor/Block_moyen.png" id="4_dd06r"]
 [ext_resource type="Texture2D" uid="uid://p10pqdtr2p05" path="res://img/image_level_decor/Block_petit.png" id="5_v15sc"]
@@ -14,7 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://18uhvcj12pi" path="res://img/image_level_decor/Vague_clair_2.png" id="10_i5bvg"]
 [ext_resource type="Texture2D" uid="uid://cwbtvbsp617r2" path="res://img/image_level_decor/Vague_moyen_2.png" id="12_omkjk"]
 [ext_resource type="Texture2D" uid="uid://cy63m4rokm8o8" path="res://img/image_level_decor/FOND MODIF.png" id="13_p1t7l"]
-[ext_resource type="PackedScene" path="res://pieuvre.tscn" id="20_b61l3"]
+[ext_resource type="Script" path="res://scene platform/dead.gd" id="16_q4p5f"]
+[ext_resource type="PackedScene" uid="uid://bokpvih1rwvcj" path="res://boss.tscn" id="18_bfng4"]
+[ext_resource type="Script" path="res://scene platform/pouvoir.gd" id="18_u66rf"]
+[ext_resource type="Texture2D" uid="uid://bnhid74f1p7x" path="res://img/Pouvoir foudre 1.png" id="18_yoks0"]
+[ext_resource type="PackedScene" uid="uid://bs87jrsrmpy1o" path="res://pieuvre.tscn" id="20_b61l3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mb6cm"]
 texture = ExtResource("3_gmihs")
@@ -80,21 +85,29 @@ func _process(delta):
 
 "
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1743n"]
+size = Vector2(21523.5, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4h5w"]
+size = Vector2(208, 122)
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_f07in")
 
 [node name="player" parent="." instance=ExtResource("1_0s2s7")]
-position = Vector2(4539, 537)
+position = Vector2(478, 481)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="player"]
+position = Vector2(-478, -481)
+stream = ExtResource("7_k17bd")
+area_mask = 65535
+script = ExtResource("8_u6mvr")
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(0.5, 0.5)
 tile_set = SubResource("TileSet_tax6f")
 format = 2
-layer_0/tile_data = PackedInt32Array(1179661, 0, 0, 983100, 0, 0, 1441821, 2, 0, 1245227, 1, 0, 1245261, 1, 0, 1769559, 2, 0, 1441896, 0, 0, 1310861, 1, 0, 917633, 2, 0, 1769601, 2, 0, 2097288, 2, 0, 589961, 2, 0, 1376425, 0, 0, 1835166, 2, 0, 1769664, 1, 0, 1704128, 2, 0, 1507531, 2, 0, 524561, 0, 0, 459025, 1, 0, 393489, 2, 0, 1310975, 1, 0, 1048878, 0, 0, 1310956, 0, 0, 1376484, 1, 0, 1769687, 2, 0, 1376551, 1, 0, 2031891, 2, 0, 1573185, 1, 0, 655707, 0, 0, 2163035, 0, 0, 1114446, 2, 0, 1966412, 2, 0, 2097504, 0, 0, 524637, 1, 0, 1966432, 1, 0, 2163048, 2, 65536, 721252, 1, 65536, 1507653, 2, 65536, 1114420, 1, 65536, 1179888, 0, 65536, 1245357, 0, 65536, 458893, 1, 65536, 1245330, 2, 65536, 2031757, 1, 0, 2031763, 1, 65536, 1310833, 0, 65536, 1835379, 1, 0, 1835387, 0, 65536, 1048943, 2, 0, 1245560, 1, 65536, 1442190, 0, 0, 1769849, 2, 0, 1311116, 2, 0, 917908, 2, 0, 786841, 1, 65536, 1769890, 0, 0, 1638824, 1, 65536, 1180078, 2, 0, 1507768, 1, 65536, 1376713, 0, 0, 1180110, 0, 0, 983509, 0, 0, 983533, 0, 65536, 1180146, 0, 65536, 1376759, 0, 65536, 1180169, 1, 0, 1638931, 2, 0, 1311259, 2, 65536, 721183, 2, 0, 1179921, 0, 0, 1966341, 1, 0, 1835296, 1, 0, 1180192, 1, 65536, 524820, 2, 0, 655897, 1, 65536, 1638955, 1, 0, 1507888, 2, 65536, 1114681, 1, 0, 1835586, 0, 0, 1704520, 2, 65536, 1311310, 1, 0, 1376851, 1, 65536, 1376878, 0, 0, 918135, 1, 0, 918145, 1, 65536, 787070, 2, 65536, 787066, 2, 0, 1376904, 0, 65536, 1770081, 0, 0, 1770131, 0, 65536)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="TileMap"]
-scale = Vector2(2, 2)
-stream = ExtResource("7_k17bd")
-script = ExtResource("8_u6mvr")
+layer_0/tile_data = PackedInt32Array(1179661, 0, 0, 1441821, 2, 0, 1245227, 1, 0, 1310861, 1, 0, 1507531, 2, 0, 1769687, 2, 0, 1376551, 1, 0, 1114446, 2, 0, 1179888, 0, 65536, 1310833, 0, 65536, 1048943, 2, 0, 1442190, 0, 0, 1048636, 0, 0, 589964, 1, 65536, 1114240, 2, 0, 1179802, 2, 65536, 1310891, 0, 65536, 1507517, 1, 0, 1573088, 2, 0, 1114420, 0, 0, 1507651, 1, 0, 852318, 0, 0, 983297, 1, 0, 917790, 2, 0, 1376529, 0, 0, 1442170, 1, 65536, 1245597, 2, 0, 917925, 2, 0, 655790, 2, 0, 983478, 2, 0, 655806, 2, 0, 393679, 0, 0, 721373, 1, 0, 1049068, 0, 65536, 1442301, 1, 0, 1180170, 1, 65536, 786963, 2, 0, 1180191, 1, 65536, 1573416, 2, 65536, 1114679, 0, 0, 655958, 1, 65536, 787015, 1, 0, 852142, 2, 0, 1310795, 1, 0, 917586, 2, 0, 524383, 2, 0, 589919, 1, 0, 655455, 0, 0, 1114723, 2, 0, 1114754, 2, 0, 1507955, 0, 0)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -160,11 +173,63 @@ position = Vector2(961, 537)
 process_callback = 0
 script = SubResource("GDScript_tsh5i")
 
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 14
+script = ExtResource("16_q4p5f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(10766.3, 1158)
+shape = SubResource("RectangleShape2D_1743n")
+
 [node name="Pieuvre" parent="." instance=ExtResource("20_b61l3")]
-position = Vector2(5533, 508)
+position = Vector2(3774, 562)
 
 [node name="Pieuvre2" parent="." instance=ExtResource("20_b61l3")]
-position = Vector2(4669, 898)
+position = Vector2(5654, 564)
 
 [node name="Pieuvre3" parent="." instance=ExtResource("20_b61l3")]
-position = Vector2(3661, 545)
+position = Vector2(7858, 496)
+
+[node name="Pieuvre4" parent="." instance=ExtResource("20_b61l3")]
+position = Vector2(10052, 465)
+
+[node name="Pieuvre5" parent="." instance=ExtResource("20_b61l3")]
+position = Vector2(12930, 624)
+
+[node name="Pieuvre6" parent="." instance=ExtResource("20_b61l3")]
+position = Vector2(15953, 434)
+
+[node name="Pieuvre7" parent="." instance=ExtResource("20_b61l3")]
+position = Vector2(18345, 459)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 2947.0
+offset_top = 60.0
+offset_right = 3150.0
+offset_bottom = 105.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Appuyer sur E"
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("18_bfng4")]
+position = Vector2(20209, 616)
+
+[node name="zoneDetclevel1" type="Area2D" parent="."]
+position = Vector2(3047, 241)
+script = ExtResource("18_u66rf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zoneDetclevel1"]
+shape = SubResource("RectangleShape2D_h4h5w")
+
+[node name="PouvoirFoudre1" type="Sprite2D" parent="zoneDetclevel1"]
+position = Vector2(13.0002, -73)
+scale = Vector2(0.209324, 0.209324)
+texture = ExtResource("18_yoks0")
+
+[connection signal="body_entered" from="zoneDetclevel1" to="zoneDetclevel1" method="detecEntrerlabel1"]
+[connection signal="body_exited" from="zoneDetclevel1" to="zoneDetclevel1" method="detectSortiLabel1"]

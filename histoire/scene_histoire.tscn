@@ -6,6 +6,43 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_fpvjg"]
 specular_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_toonc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_hiudf"]
+resource_name = "cutscenes_history"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l6rb0"]
+_data = {
+"RESET": SubResource("Animation_toonc"),
+"cutscenes_history": SubResource("Animation_hiudf")
+}
+
 [node name="SceneHistoire" type="Control"]
 layout_mode = 3
 anchors_preset = 15
