@@ -1,11 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://drg3cm41kdqwm"]
+[gd_scene load_steps=8 format=3 uid="uid://drg3cm41kdqwm"]
 
 [ext_resource type="Texture2D" uid="uid://dx43mks1wwl53" path="res://img/page play.png" id="1_vrp0g"]
 [ext_resource type="FontFile" uid="uid://fup72sxqim0u" path="res://font/Anton-Regular.ttf" id="2_81jr2"]
 
 [sub_resource type="Theme" id="Theme_njrhs"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xowhb"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_an115"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5q3nw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6bf4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k658h"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -28,7 +34,8 @@ offset_bottom = 427.0
 theme = SubResource("Theme_njrhs")
 theme_override_fonts/font = ExtResource("2_81jr2")
 theme_override_font_sizes/font_size = 60
-theme_override_styles/hover = SubResource("StyleBoxEmpty_xowhb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_an115")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5q3nw")
 text = "Continuer la partie"
 
 [node name="startButton2" type="Button" parent="."]
@@ -40,6 +47,7 @@ offset_bottom = 617.0
 theme = SubResource("Theme_njrhs")
 theme_override_fonts/font = ExtResource("2_81jr2")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_o6bf4")
 text = "Nouvelle partie"
 
 [node name="startButton3" type="Button" parent="."]
@@ -49,6 +57,8 @@ offset_top = 697.0
 offset_right = 465.0
 offset_bottom = 815.0
 theme = SubResource("Theme_njrhs")
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_81jr2")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k658h")
 text = "Quitter la partie"
