@@ -27,6 +27,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		$AudioStreamPlayer2D2.play()
+		$AnimatedSprite2D.play("jump")
+		
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -60,9 +62,6 @@ func _physics_process(delta):
 
 	update_animation()
 	move_and_slide()
-	
-func update_animation():
-	if velocity.y < 0:
-		animation.play("jump")
-		
+
+
 
