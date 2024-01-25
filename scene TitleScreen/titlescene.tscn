@@ -1,11 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://drg3cm41kdqwm"]
+[gd_scene load_steps=12 format=3 uid="uid://drg3cm41kdqwm"]
 
 [ext_resource type="Texture2D" uid="uid://dx43mks1wwl53" path="res://img/page play.png" id="1_vrp0g"]
 [ext_resource type="FontFile" uid="uid://fup72sxqim0u" path="res://font/Anton-Regular.ttf" id="2_81jr2"]
+[ext_resource type="Script" path="res://code/quitButton.gd" id="3_n2cuu"]
 
 [sub_resource type="Theme" id="Theme_njrhs"]
+Button/constants/icon_max_width = 10
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xowhb"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_an115"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5q3nw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yh05y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6bf4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_87sgs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k658h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3dlx2"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -26,29 +40,42 @@ offset_top = 309.0
 offset_right = 465.0
 offset_bottom = 427.0
 theme = SubResource("Theme_njrhs")
+theme_override_colors/font_color = Color(0.694118, 0.694118, 0.694118, 1)
+theme_override_colors/font_hover_color = Color(0.631373, 0.796078, 0.505882, 1)
+theme_override_constants/icon_max_width = 11
 theme_override_fonts/font = ExtResource("2_81jr2")
 theme_override_font_sizes/font_size = 60
-theme_override_styles/hover = SubResource("StyleBoxEmpty_xowhb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_an115")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5q3nw")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_yh05y")
+disabled = true
 text = "Continuer la partie"
 
-[node name="startButton2" type="Button" parent="."]
+[node name="continueButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 97.0
 offset_top = 499.0
 offset_right = 465.0
 offset_bottom = 617.0
 theme = SubResource("Theme_njrhs")
+theme_override_colors/font_hover_color = Color(0.631373, 0.796078, 0.505882, 1)
 theme_override_fonts/font = ExtResource("2_81jr2")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_o6bf4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_87sgs")
 text = "Nouvelle partie"
 
-[node name="startButton3" type="Button" parent="."]
+[node name="quitButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 97.0
 offset_top = 697.0
 offset_right = 465.0
 offset_bottom = 815.0
 theme = SubResource("Theme_njrhs")
+theme_override_colors/font_hover_color = Color(0.631373, 0.796078, 0.505882, 1)
 theme_override_fonts/font = ExtResource("2_81jr2")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k658h")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3dlx2")
 text = "Quitter la partie"
+script = ExtResource("3_n2cuu")
