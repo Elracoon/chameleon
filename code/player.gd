@@ -15,7 +15,7 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_pressed("echap"):
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://scene TitleScreen/titlescene.tscn")
 
 func _physics_process(delta):
 	# Add the gravity.
