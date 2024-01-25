@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://btkihbqb3axmv"]
+[gd_scene load_steps=27 format=3 uid="uid://cjj764wgb070q"]
 
 [ext_resource type="Script" path="res://code/player.gd" id="1_7d68g"]
 [ext_resource type="Texture2D" uid="uid://bt3f773i6cbkr" path="res://img/PERSO1.png" id="2_hlxtx"]
@@ -123,7 +123,7 @@ script = ExtResource("1_7d68g")
 position = Vector2(2, 0.999939)
 scale = Vector2(0.289965, 0.289965)
 sprite_frames = SubResource("SpriteFrames_s2k12")
-animation = &"jump"
+animation = &"walk"
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
 visible = false
