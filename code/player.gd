@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var animation = $AnimationPlayer
+@onready var sprite = $Sprite2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -700.0
 
@@ -31,15 +33,18 @@ func _physics_process(delta):
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
-		$AnimatedSprite2D.play('walk')
-		if Input.is_action_pressed("move_right"):
+		if is_on_floor():
+			$AnimatedSprite2D.play('walk')
+			if Input.is_action_pressed("move_right"):
 				$AnimatedSprite2D.flip_h = false
 				if sign($Marker2D.position.x) == -1:
 					$Marker2D.position.x *= -1
-		if Input.is_action_pressed("move_left"):
-				$AnimatedSprite2D.flip_h = true
-				if sign($Marker2D.position.x) == 1:
-					$Marker2D.position.x *= -1
+			if Input.is_action_pressed("move_left"):
+					$AnimatedSprite2D.flip_h = true
+					if sign($Marker2D.position.x) == 1:
+						$Marker2D.position.x *= -1
+		else:
+			$AnimatedSprite2D.stop()
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		$AnimatedSprite2D.stop()
@@ -53,5 +58,11 @@ func _physics_process(delta):
 		get_parent().add_child(bullet)
 		bullet.position = $Marker2D.global_position
 
+	update_animation()
 	move_and_slide()
 	
+func update_animation():
+	if velocity.y < 0:
+		animation.play("jump")
+		
+
