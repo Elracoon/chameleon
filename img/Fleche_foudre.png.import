@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3p1jt1l8ibcr"
-path="res://.godot/imported/Vague_Foncé_1.png-529f00fd6e0190db3dcf8983c67e1949.ctex"
+uid="uid://cer2d24rbn8b0"
+path="res://.godot/imported/Fleche_foudre.png-209e17a4fa5d460d72c50a24634d6860.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/image_level_decor/Vague_Foncé_1.png"
-dest_files=["res://.godot/imported/Vague_Foncé_1.png-529f00fd6e0190db3dcf8983c67e1949.ctex"]
+source_file="res://img/Fleche_foudre.png"
+dest_files=["res://.godot/imported/Fleche_foudre.png-209e17a4fa5d460d72c50a24634d6860.ctex"]
 
 [params]
 

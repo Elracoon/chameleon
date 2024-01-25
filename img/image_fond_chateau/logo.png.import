@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c06rhsu2eygqd"
-path="res://.godot/imported/Vague_Foncé_2.png-5394669c972873d490b4d794012c19ff.ctex"
+uid="uid://bf25emmarhhgh"
+path="res://.godot/imported/logo.png-d07c76a9eca23e60741cbd1b4384f6a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/image_level_decor/Vague_Foncé_2.png"
-dest_files=["res://.godot/imported/Vague_Foncé_2.png-5394669c972873d490b4d794012c19ff.ctex"]
+source_file="res://img/image_fond_chateau/logo.png"
+dest_files=["res://.godot/imported/logo.png-d07c76a9eca23e60741cbd1b4384f6a1.ctex"]
 
 [params]
 

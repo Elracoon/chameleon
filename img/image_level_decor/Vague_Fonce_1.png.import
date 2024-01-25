@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf25emmarhhgh"
-path="res://.godot/imported/Capture d’écran 2024-01-24 à 21.42.41.png-5abeb9518f00eeae232cdd45d55abb99.ctex"
+uid="uid://c3p1jt1l8ibcr"
+path="res://.godot/imported/Vague_Fonce_1.png-7f6ae36e675c22f51e96798422d3d7a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/image_fond_chateau/Capture d’écran 2024-01-24 à 21.42.41.png"
-dest_files=["res://.godot/imported/Capture d’écran 2024-01-24 à 21.42.41.png-5abeb9518f00eeae232cdd45d55abb99.ctex"]
+source_file="res://img/image_level_decor/Vague_Fonce_1.png"
+dest_files=["res://.godot/imported/Vague_Fonce_1.png-7f6ae36e675c22f51e96798422d3d7a4.ctex"]
 
 [params]
 
