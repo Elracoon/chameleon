@@ -1,9 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://drg3cm41kdqwm"]
+[gd_scene load_steps=5 format=3 uid="uid://drg3cm41kdqwm"]
 
-[ext_resource type="Texture2D" uid="uid://b3ramwnkcycrb" path="res://img/image_fond_chateau/fond chateau_Plan de travail 1 copie 2 3.png" id="1_1x377"]
-[ext_resource type="Texture2D" uid="uid://bf25emmarhhgh" path="res://img/image_fond_chateau/Capture d’écran 2024-01-24 à 21.42.41.png" id="2_43pha"]
+[ext_resource type="Texture2D" uid="uid://dx43mks1wwl53" path="res://img/page play.png" id="1_vrp0g"]
+[ext_resource type="FontFile" uid="uid://fup72sxqim0u" path="res://font/Anton-Regular.ttf" id="2_81jr2"]
 
 [sub_resource type="Theme" id="Theme_njrhs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xowhb"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -14,20 +16,39 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_1x377")
-centered = false
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(426, 81)
-texture = ExtResource("2_43pha")
+texture = ExtResource("1_vrp0g")
 centered = false
 
 [node name="startButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 815.0
-offset_top = 644.0
-offset_right = 1129.0
-offset_bottom = 762.0
+offset_left = 97.0
+offset_top = 309.0
+offset_right = 465.0
+offset_bottom = 427.0
 theme = SubResource("Theme_njrhs")
-theme_override_font_sizes/font_size = 40
-text = "Start"
+theme_override_fonts/font = ExtResource("2_81jr2")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xowhb")
+text = "Continuer la partie"
+
+[node name="startButton2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 499.0
+offset_right = 465.0
+offset_bottom = 617.0
+theme = SubResource("Theme_njrhs")
+theme_override_fonts/font = ExtResource("2_81jr2")
+theme_override_font_sizes/font_size = 60
+text = "Nouvelle partie"
+
+[node name="startButton3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 697.0
+offset_right = 465.0
+offset_bottom = 815.0
+theme = SubResource("Theme_njrhs")
+theme_override_fonts/font = ExtResource("2_81jr2")
+theme_override_font_sizes/font_size = 60
+text = "Quitter la partie"
