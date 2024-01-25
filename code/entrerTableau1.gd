@@ -16,11 +16,10 @@ func _process(delta):
 		entrerTableau()
 	
 
-
 func detecEntrerlabel1(body):
 	label1.visible = true
 	inZoneDect = true
-	print("heuehozuhaoeh")
+	
 	
 
 func detectSortiLabel1(body):
@@ -30,5 +29,4 @@ func detectSortiLabel1(body):
 func entrerTableau():
 	if Input.is_action_just_pressed("interagir"):
 		# Chargez la nouvelle scène
-		print(scene_to_load)
 		get_tree().change_scene_to_file(scene_to_load)
