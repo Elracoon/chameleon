@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtmgrmmygmq7n"]
+
+[ext_resource type="Script" path="res://menu_pause/pause_scene.gd" id="1_py46r"]
+[ext_resource type="FontFile" uid="uid://fup72sxqim0u" path="res://font/Anton-Regular.ttf" id="1_xrqog"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_axuo6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r5br3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3k1lm"]
+
+[node name="PauseScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_py46r")
+metadata/_edit_vertical_guides_ = [963.0]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(0.321569, 0.321569, 0.321569, 0.678431)
+position = Vector2(959.75, 539.75)
+scale = Vector2(1920.5, 1080.5)
+texture = SubResource("CanvasTexture_axuo6")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 734.0
+offset_top = 168.0
+offset_right = 1190.0
+offset_bottom = 359.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_xrqog")
+theme_override_font_sizes/font_size = 100
+text = "Pause"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="restartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 688.0
+offset_top = 572.0
+offset_right = 1232.0
+offset_bottom = 712.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.631373, 0.796078, 0.505882, 1)
+theme_override_fonts/font = ExtResource("1_xrqog")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r5br3")
+text = "Reprendre la partie"
+
+[node name="quitPartyButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 741.0
+offset_top = 824.0
+offset_right = 1184.0
+offset_bottom = 939.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.631373, 0.796078, 0.505882, 1)
+theme_override_fonts/font = ExtResource("1_xrqog")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3k1lm")
+text = "Quitter la partie"
+
+[connection signal="pressed" from="restartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="quitPartyButton" to="." method="_on_quit_party_button_pressed"]

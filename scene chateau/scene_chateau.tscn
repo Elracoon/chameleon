@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bcakhf7qerhen"]
+[gd_scene load_steps=19 format=3 uid="uid://bcakhf7qerhen"]
 
 [ext_resource type="Script" path="res://code/player.gd" id="1_6gu0m"]
 [ext_resource type="Script" path="res://scene platform/Camera2D.gd" id="2_w4frf"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" path="res://code/entrerTableau1.gd" id="9_totdb"]
 [ext_resource type="Script" path="res://code/entrerTableau2.gd" id="10_50usc"]
 [ext_resource type="Script" path="res://code/entrerTableau3.gd" id="11_q3umh"]
+[ext_resource type="Script" path="res://code/zoneStart.gd" id="13_h1xyv"]
+[ext_resource type="Script" path="res://code/zoneStart2.gd" id="14_7clkv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j72ki"]
 size = Vector2(63, 134.5)
@@ -56,7 +58,7 @@ centered = false
 
 [node name="player" type="CharacterBody2D" parent="."]
 z_index = 1
-position = Vector2(3518, 644)
+position = Vector2(555, 709)
 script = ExtResource("1_6gu0m")
 metadata/_edit_group_ = true
 
@@ -164,9 +166,73 @@ offset_bottom = 856.0
 theme_override_font_sizes/font_size = 30
 text = "Appuyer sur E"
 
+[node name="zoneStart" type="Area2D" parent="."]
+position = Vector2(555, 936)
+script = ExtResource("13_h1xyv")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zoneStart"]
+shape = SubResource("RectangleShape2D_64sfl")
+
+[node name="instruSauter" type="Label" parent="."]
+offset_left = 451.0
+offset_top = 709.0
+offset_right = 654.0
+offset_bottom = 796.0
+theme_override_font_sizes/font_size = 30
+text = "Appuyer sur Z 
+pour sauter"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="instruDroite" type="Label" parent="."]
+offset_left = 750.0
+offset_top = 856.0
+offset_right = 958.0
+offset_bottom = 943.0
+theme_override_font_sizes/font_size = 30
+text = "Appuyer sur D 
+pour aller à droite"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="instruGauche" type="Label" parent="."]
+offset_left = 141.0
+offset_top = 856.0
+offset_right = 418.0
+offset_bottom = 943.0
+theme_override_font_sizes/font_size = 30
+text = "Appuyer sur Q
+pour aller à gauche"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="zoneStart2" type="Area2D" parent="."]
+position = Vector2(1473, 936)
+script = ExtResource("14_7clkv")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zoneStart2"]
+shape = SubResource("RectangleShape2D_64sfl")
+
+[node name="instruTire" type="Label" parent="."]
+offset_left = 1329.0
+offset_top = 777.0
+offset_right = 1631.0
+offset_bottom = 864.0
+theme_override_font_sizes/font_size = 30
+text = "Appuyer sur  ESPACE
+pour tirer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="body_entered" from="zoneDetclevel1" to="zoneDetclevel1" method="detecEntrerlabel1"]
 [connection signal="body_exited" from="zoneDetclevel1" to="zoneDetclevel1" method="detectSortiLabel1"]
 [connection signal="body_entered" from="zoneDetclevel2" to="zoneDetclevel2" method="detecEntrerlabel2"]
 [connection signal="body_exited" from="zoneDetclevel2" to="zoneDetclevel2" method="detectSortiLabel2"]
 [connection signal="body_entered" from="zoneDetclevel3" to="zoneDetclevel3" method="detectEntrerlabel3"]
 [connection signal="body_exited" from="zoneDetclevel3" to="zoneDetclevel3" method="detectSortiLabel3"]
+[connection signal="body_entered" from="zoneStart" to="zoneStart" method="_on_body_entered"]
+[connection signal="body_exited" from="zoneStart" to="zoneStart" method="_on_body_exited"]
+[connection signal="body_entered" from="zoneStart2" to="zoneStart2" method="_on_body_entered"]
+[connection signal="body_exited" from="zoneStart2" to="zoneStart2" method="_on_body_exited"]

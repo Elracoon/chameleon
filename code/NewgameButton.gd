@@ -1,6 +1,6 @@
 extends Button
 
-var scene_to_load = "res://scene chateau/scene_chateau.tscn"
+var scene_to_load = "res://histoire/scene_histoire.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

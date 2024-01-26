@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmpes0ameftsm"]
+[gd_scene load_steps=4 format=3 uid="uid://dmpes0ameftsm"]
 
 [ext_resource type="FontFile" uid="uid://fup72sxqim0u" path="res://font/Anton-Regular.ttf" id="1_djp5w"]
+[ext_resource type="Script" path="res://code/scene_histoire.gd" id="1_vwblh"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_fpvjg"]
 specular_color = Color(0, 0, 0, 1)
@@ -49,6 +50,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vwblh")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -60,25 +62,11 @@ position = Vector2(959.75, 539.75)
 scale = Vector2(1920.5, 1080.5)
 texture = SubResource("CanvasTexture_fpvjg")
 
-[node name="Label1" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.081
-anchor_top = 0.306
-anchor_right = 0.081
-anchor_bottom = 0.306
-offset_left = -107.52
-offset_top = 104.52
-offset_right = 1718.48
-offset_bottom = 472.52
-theme_override_fonts/font = ExtResource("1_djp5w")
-theme_override_font_sizes/font_size = 65
-text = "Il était une fois, Arkanthos, le mage noir du royaume . 
-Assoiffé de pouvoir, il décida de plonger les royaumes dans le chaos. "
-horizontal_alignment = 1
+[node name="next_char" type="Timer" parent="."]
 
-[node name="Label2" type="Label" parent="."]
-visible = false
+[node name="next_message" type="Timer" parent="."]
+
+[node name="Label1" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.081
@@ -88,91 +76,11 @@ anchor_bottom = 0.306
 offset_left = -107.52
 offset_top = 32.52
 offset_right = 1718.48
-offset_bottom = 437.52
+offset_bottom = 400.52
 theme_override_fonts/font = ExtResource("1_djp5w")
 theme_override_font_sizes/font_size = 65
-text = "Dans sa quête maléfique, 
-il s'empara des cinq pierres de pouvoir des mondes élémentaires,
- les éparpillant à travers chaque royaume, 
-perturbant ainsi l’équilibre paisible des mondes."
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.081
-anchor_top = 0.306
-anchor_right = 0.081
-anchor_bottom = 0.306
-offset_left = -107.52
-offset_top = 104.52
-offset_right = 1718.48
-offset_bottom = 472.52
-theme_override_fonts/font = ExtResource("1_djp5w")
-theme_override_font_sizes/font_size = 65
-text = "Mais au milieu de ce chaos, un héros se dressa.
- Lyrian, le caméléon archer, 
-fut choisi par le destin pour restaurer l'harmonie."
-horizontal_alignment = 1
-
-[node name="Label4" type="Label" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.081
-anchor_top = 0.306
-anchor_right = 0.081
-anchor_bottom = 0.306
-offset_left = -107.52
-offset_top = 104.52
-offset_right = 1718.48
-offset_bottom = 472.52
-theme_override_fonts/font = ExtResource("1_djp5w")
-theme_override_font_sizes/font_size = 65
-text = "Sa mission ? 
-Parcourir les mondes afin de récupérer les pierres de pouvoir voler 
-en combattant les monstres et arrêter 
-le plan machiavélique d’Arkanthos."
-horizontal_alignment = 1
-
-[node name="Label5" type="Label" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.081
-anchor_top = 0.306
-anchor_right = 0.081
-anchor_bottom = 0.306
-offset_left = -107.52
-offset_top = 104.52
-offset_right = 1718.48
-offset_bottom = 472.52
-theme_override_fonts/font = ExtResource("1_djp5w")
-theme_override_font_sizes/font_size = 65
-text = "Ainsi commence l'épopée de Lyrian, 
-l'archer caméléon, dans sa quête pour sauver les 
-mondes élémentaires de l'emprise du mage noir."
-horizontal_alignment = 1
-
-[node name="Label6" type="Label" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.081
-anchor_top = 0.306
-anchor_right = 0.081
-anchor_bottom = 0.306
-offset_left = -107.52
-offset_top = 104.52
-offset_right = 1718.48
-offset_bottom = 472.52
-theme_override_fonts/font = ExtResource("1_djp5w")
-theme_override_font_sizes/font_size = 65
-text = "A vous de jouer !"
-horizontal_alignment = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_l6rb0")
-}
+[connection signal="timeout" from="next_char" to="." method="_on_next_char_timeout"]
+[connection signal="timeout" from="next_message" to="." method="_on_next_message_timeout"]
