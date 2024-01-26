@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bs87jrsrmpy1o"]
+[gd_scene load_steps=7 format=3 uid="uid://bs87jrsrmpy1o"]
 
 [ext_resource type="Script" path="res://pieuvre.gd" id="1_fumta"]
 [ext_resource type="Texture2D" uid="uid://ceak8f6av7t48" path="res://img/BEBE PIEUVRE.png" id="1_s3fvu"]
+[ext_resource type="AudioStream" uid="uid://dfhnos4etjq82" path="res://audio/bruit ennemi.mp3" id="3_xc7aa"]
+[ext_resource type="Script" path="res://code/vague.gd" id="4_gegid"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4njhx"]
 radius = 57.0
@@ -31,5 +33,9 @@ position = Vector2(-58, 0)
 target_position = Vector2(0, 65)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_xc7aa")
+script = ExtResource("4_gegid")
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

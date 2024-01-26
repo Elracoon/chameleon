@@ -35,6 +35,7 @@ func _on_hit_box_area_entered(area):
 		area.get_parent().die()
 
 func die():
+	$AudioStreamPlayer2D.play()
 	remove_child($Sprite2D)
 	remove_child($HitBox)
 	remove_child($CollisionShape2D)
